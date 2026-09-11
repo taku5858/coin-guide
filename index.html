@@ -25,10 +25,16 @@
 </header>
 
 <main>
-  <!-- 画像差し替え用スペース。将来はここを
-       <img class="hero-visual" src="img/hero.jpg" alt="実家の引き出しや木箱から古い硬貨・紙幣が見つかった状況写真">
-       に置き換える（is-placeholder は外す）。推奨内容：実家の引き出しや木箱から古い硬貨・紙幣が見つかった状況写真（人物なし） -->
-  <div class="hero-visual is-placeholder" aria-hidden="true"></div>
+  <!-- ヒーロー画像：assets/images/hero-old-money.png（実家の引き出しに古い硬貨・紙幣が入った写真、見出し文字入り）。
+       ファイルが未配置／読み込み失敗の場合は onerror で従来のプレースホルダー表示にフォールバックする。 -->
+  <img
+    class="hero-visual"
+    src="assets/images/hero-old-money.png"
+    width="1997"
+    height="788"
+    alt="実家の整理中に見つかった古い硬貨や紙幣"
+    onerror="this.onerror=null; var d=document.createElement('div'); d.className='hero-visual is-placeholder'; d.setAttribute('aria-hidden','true'); this.replaceWith(d);"
+  >
 
   <h1>実家の片付けで、昔のお金が出てきたら。</h1>
 
@@ -40,21 +46,29 @@
 
   <ul class="question-cards">
     <li><a class="question-card" href="guide/inherited-coins.html#step-dontthrow">
-      <span class="question-card-icon is-placeholder" aria-hidden="true"></span>
+      <span class="question-card-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16"/><path d="M9 7V4h6v3"/><path d="M6 7l1 13h10l1-13"/></svg>
+      </span>
       <span>これ、捨てていい？</span>
     </a></li>
     <li><a class="question-card" href="guide/bank-or-specialist.html">
-      <span class="question-card-icon is-placeholder" aria-hidden="true"></span>
+      <span class="question-card-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10l9-5 9 5"/><path d="M4 10v9M9 10v9M15 10v9M20 10v9"/><path d="M2 21h20"/></svg>
+      </span>
       <span>銀行に持っていける？</span>
     </a></li>
     <li><a class="question-card" href="guide/inherited-coins.html#step-dontclean">
-      <span class="question-card-icon is-placeholder" aria-hidden="true"></span>
+      <span class="question-card-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v4M12 17v4M4.5 12h4M15.5 12h4M6.9 6.9l2.5 2.5M14.6 14.6l2.5 2.5M17.1 6.9l-2.5 2.5M9.4 14.6l-2.5 2.5"/></svg>
+      </span>
       <span>磨いても大丈夫？</span>
     </a></li>
     <!-- TODO: 大量のコインに特化した専用記事（数え方・分け方・保管方法）を作成した際は、
          リンク先をその記事に差し替える。現時点では guide/inherited-coins.html の分類セクションへ誘導する。 -->
     <li><a class="question-card" href="guide/inherited-coins.html#step-classify">
-      <span class="question-card-icon is-placeholder" aria-hidden="true"></span>
+      <span class="question-card-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6"/><path d="M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/></svg>
+      </span>
       <span>大量にあるときの分け方は？</span>
     </a></li>
   </ul>

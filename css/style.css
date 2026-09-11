@@ -402,10 +402,10 @@ a.flow-step:focus {
   margin: 0;
 }
 
-/* 画像スペース（将来ローカル画像に差し替え可能な枠）
-   サイズ・形状はこの2ルールのみで決まる。将来 <img class="hero-visual" src="..." alt="..."> のように
-   同じクラス名を img タグに付け替えるだけで差し替えでき、object-fit: cover でトリミング表示される。
-   実画像を追加したら .is-placeholder は外す（枠線・パターン背景のみ消える）。 */
+/* 画像スペース（ローカル画像に対応した枠）
+   サイズ・形状はこの2ルールのみで決まる。hero-visualは<img>タグ（assets/images/配下のローカル画像を読み込む）で、
+   画像が存在しない・読み込みに失敗した場合はHTML側のonerrorが .is-placeholder を付与し、
+   枠線・パターン背景のプレースホルダー表示にフォールバックする。situation-visualは引き続き<div>のプレースホルダーのまま。 */
 .hero-visual,
 .situation-visual {
   display: block;
@@ -418,6 +418,8 @@ a.flow-step:focus {
 
 .hero-visual {
   aspect-ratio: 3 / 1;
+  /* 引き出しの中の硬貨・紙幣が中央下寄りにあるため、そこを基準に軽くクロップする */
+  object-position: center 60%;
 }
 
 .situation-visual {
@@ -442,6 +444,7 @@ a.flow-step:focus {
     aspect-ratio: 16 / 9;
     max-height: 90px;
   }
+
 }
 
 /* トップページ：状況への疑問カード（タップ可能なナビゲーション） */
@@ -483,16 +486,19 @@ a.flow-step:focus {
 }
 
 .question-card-icon {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 32px;
   height: 32px;
   border-radius: 8px;
-  object-fit: cover;
+  background-color: var(--color-notice-bg);
+  color: var(--color-accent-dark);
 }
 
-.question-card-icon.is-placeholder {
-  background-color: var(--color-notice-bg);
-  border: 1px dashed var(--color-border);
+.question-card-icon svg {
+  width: 20px;
+  height: 20px;
 }
 
 .hero-cta {
