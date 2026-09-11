@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://taku5858.github.io/coin-guide/sitemap.xml
