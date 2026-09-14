@@ -41,10 +41,10 @@
     },
     banknote: {
       question2: null,
-      note: "古紙幣専用の記事は準備中です。まずは全体の確認手順から見ていただくのがおすすめです。",
+      note: "紙幣は、発行された時期によって今も使えるかどうかが変わります。まずは次のページで確認してみてください。",
       links: [
-        { href: "guide/first-check.html", label: "昔のお金を目の前に置いて確認する5ステップ" },
-        { href: "types/coin-types-overview.html", label: "古銭・記念硬貨・古紙幣の違い" }
+        { href: "types/old-banknotes.html", label: "古い紙幣は今も使える？実家から出てきた昔のお札の確認方法" },
+        { href: "guide/first-check.html", label: "昔のお金を目の前に置いて確認する5ステップ" }
       ]
     },
     foreign: {
